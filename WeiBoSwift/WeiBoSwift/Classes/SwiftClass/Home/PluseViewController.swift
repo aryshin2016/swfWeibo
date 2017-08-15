@@ -14,6 +14,7 @@ class PluseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
         // Do any additional setup after loading the view.
         self.scrollView = UIScrollView(frame: CGRect(x: 0, y: 280, width: view.bounds.width, height: 300))
         self.scrollView?.isPagingEnabled = true
