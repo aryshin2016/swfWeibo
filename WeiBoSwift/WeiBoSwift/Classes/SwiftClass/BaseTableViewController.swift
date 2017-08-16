@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
     
-    var isLogin = false
+    var isLogin = true
     
     override func loadView() {
         isLogin ? super.loadView() : setupVistorUI()

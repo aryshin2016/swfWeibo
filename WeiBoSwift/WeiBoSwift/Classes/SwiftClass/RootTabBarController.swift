@@ -20,6 +20,8 @@ class RootTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.backgroundImage = UIImage(named: "tabbar_background")
+        tabBar.backgroundColor = UIColor(white: 1.0, alpha: 0.95)
         // 设置默认的黑色（不变灰）
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
         // 初始化UI.
@@ -87,10 +89,14 @@ class RootTabBarController: UITabBarController {
         let plusVC = PluseViewController()
         // 这样才能遮住tabbar
         plusVC.view.frame = UIScreen.main.bounds
+        // MARK: 这样设置-主动present控制器的view不消失，有利于实现背景穿透效果
+        plusVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         present(plusVC, animated: false, completion: {() ->() in
             ASLog(t: "")
         })
 
     }
+    
+    
 
 }

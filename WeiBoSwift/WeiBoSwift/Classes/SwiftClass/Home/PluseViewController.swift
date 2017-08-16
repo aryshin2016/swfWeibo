@@ -16,9 +16,8 @@ class PluseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
         // Do any additional setup after loading the view.
-        
+        view.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
