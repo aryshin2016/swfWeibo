@@ -6,6 +6,19 @@
 //  Copyright © 2017年 itogame. All rights reserved.
 //
 
+
+/// 自定义全局debug环境的打印函数
+///
+/// - Parameters:
+///   - t: 需要打印的对象
+///   - line: 当前打印行数,采用swift参数设置默认值方式
+///   - methodName: 当前执行打印对象的函数名,采用swift参数设置默认值方式
+func ASLog<T>(t:T, line: Int = #line, methodName : String = #function) -> () {
+    #if DEBUG
+        print("\(methodName)\(line)\(":")\(t)")
+    #endif
+}
+
 import UIKit
 
 @UIApplicationMain

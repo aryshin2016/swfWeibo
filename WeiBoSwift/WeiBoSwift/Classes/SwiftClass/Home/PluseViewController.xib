@@ -1,39 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PluseViewController" customModule="WeiBoSwift" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="hCt-ld-ikq" id="Pal-25-QJH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-ld-ikq">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCt-ld-ikq" userLabel="ADView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="iPS-YS-HKM"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFn-ix-5HH" userLabel="closePlus">
+                    <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="nFl-w1-RkI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <state key="normal" image="compose_card_delete_normal" backgroundImage="tabbar_compose_below_background_neo">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="compose_card_delete_highlighted"/>
+                    <connections>
+                        <action selector="closePlus:" destination="-1" eventType="touchUpInside" id="Jxw-Q6-SFL"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hCt-ld-ikq" secondAttribute="trailing" id="3sO-mv-x76"/>
                 <constraint firstItem="hCt-ld-ikq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="avo-le-w63"/>
+                <constraint firstAttribute="trailing" secondItem="qFn-ix-5HH" secondAttribute="trailing" id="h9i-gI-DSE"/>
                 <constraint firstItem="hCt-ld-ikq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ksT-Jm-OFj"/>
+                <constraint firstAttribute="bottom" secondItem="qFn-ix-5HH" secondAttribute="bottom" id="ujo-jS-djr"/>
+                <constraint firstItem="qFn-ix-5HH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yb8-Hu-xbn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="compose_card_delete_highlighted" width="23" height="23"/>
+        <image name="compose_card_delete_normal" width="23" height="23"/>
+        <image name="tabbar_compose_below_background_neo" width="16" height="16"/>
+    </resources>
 </document>

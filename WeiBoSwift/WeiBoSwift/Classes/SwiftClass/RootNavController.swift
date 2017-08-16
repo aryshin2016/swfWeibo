@@ -13,7 +13,8 @@ class RootNavController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 设置导航栏默认橙色主题.
+        UINavigationBar.appearance().tintColor = UIColor.orange
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +22,5 @@ class RootNavController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

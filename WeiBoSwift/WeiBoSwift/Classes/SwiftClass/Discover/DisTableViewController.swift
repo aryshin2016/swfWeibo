@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisTableViewController: UITableViewController {
+class DisTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

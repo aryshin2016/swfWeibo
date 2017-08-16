@@ -8,16 +8,11 @@
 
 import UIKit
 
-class WeiboTableViewController: UITableViewController {
+class WeiboTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source

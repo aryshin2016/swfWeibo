@@ -12,19 +12,37 @@ class PluseViewController: UIViewController {
     
     var scrollView : UIScrollView?
     
+    @IBOutlet weak var adView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
         // Do any additional setup after loading the view.
-        self.scrollView = UIScrollView(frame: CGRect(x: 0, y: 280, width: view.bounds.width, height: 300))
-        self.scrollView?.isPagingEnabled = true
-        self.scrollView?.contentSize.width = view.bounds.width * 2.0
-        self.scrollView?.bounces = false
-        view.addSubview(self.scrollView!)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        ASLog(t: "")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        ASLog(t: "")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(#function)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(#function)
+    }
+    
+    @IBAction func closePlus(_ sender: UIButton) {
+        dismiss(animated: false, completion: {})
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.removeFromSuperview()
+        closePlus(UIButton())
     }
 
 
