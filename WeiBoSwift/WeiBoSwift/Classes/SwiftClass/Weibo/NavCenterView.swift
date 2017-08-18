@@ -31,9 +31,9 @@ class NavCenterView: UIView {
         addSubview(arrowImage)
         backgroundColor = UIColor.clear
         for i in 0 ..< names.count {
-           let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 21))
+           let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 37, height: 21))
             btn.setTitle(names[i], for: UIControlState.normal)
-            btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
             btn.setTitleColor(UIColor.gray, for: UIControlState.normal)
             btn.setTitleColor(UIColor.black, for: UIControlState.selected)
             btn.addTarget(self, action: #selector(btnClicked(button:)), for: UIControlEvents.touchDown)
@@ -65,6 +65,9 @@ class NavCenterView: UIView {
         
         if (btnTit?.isEqual("热门"))! && button.isSelected == true {
             // 响应箭头旋转
+            UIView.animate(withDuration: duringT, animations: { 
+                self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+            })
 //            UIView.animate(withDuration: duringT, animations: {
 //                self.arrowImage.layer.transform = CATransform3DRotate(self.arrowImage.layer.transform, CGFloat(Double.pi), 0, 0, 1)
 //            }, completion: { (finish) in
