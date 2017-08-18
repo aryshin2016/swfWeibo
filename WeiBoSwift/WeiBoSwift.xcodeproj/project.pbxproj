@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48159F3D1F467D27008393AF /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48159F3C1F467D27008393AF /* SettingsTableViewController.storyboard */; };
 		48163CCC1F428B2E00D8E690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48163CCB1F428B2E00D8E690 /* AppDelegate.swift */; };
 		48163CD31F428B2E00D8E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48163CD21F428B2E00D8E690 /* Assets.xcassets */; };
 		48163CE21F428F3E00D8E690 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48163CE11F428F3E00D8E690 /* RootTabBarController.swift */; };
@@ -21,11 +22,11 @@
 		4818D7C11F441A9100D97007 /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818D7C01F441A9100D97007 /* UIButton+Image.swift */; };
 		4818D7C31F445E6D00D97007 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818D7C21F445E6D00D97007 /* BaseTableViewController.swift */; };
 		48A86C611F4574D100734EFC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */; };
-		48A86C621F4574D100734EFC /* SettingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48A86C601F4574D100734EFC /* SettingsTableViewController.xib */; };
 		48F94CBA1F453E7900F0E290 /* NavCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94CB91F453E7900F0E290 /* NavCenterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48159F3C1F467D27008393AF /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
 		48163CC81F428B2E00D8E690 /* WeiBoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48163CCB1F428B2E00D8E690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48163CD21F428B2E00D8E690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		4818D7C01F441A9100D97007 /* UIButton+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
 		4818D7C21F445E6D00D97007 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		48A86C601F4574D100734EFC /* SettingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewController.xib; sourceTree = "<group>"; };
 		48F94CB91F453E7900F0E290 /* NavCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCenterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +165,7 @@
 			children = (
 				48163CF41F4292BF00D8E690 /* MeTableViewController.swift */,
 				48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */,
-				48A86C601F4574D100734EFC /* SettingsTableViewController.xib */,
+				48159F3C1F467D27008393AF /* SettingsTableViewController.storyboard */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A86C621F4574D100734EFC /* SettingsTableViewController.xib in Resources */,
+				48159F3D1F467D27008393AF /* SettingsTableViewController.storyboard in Resources */,
 				48163CED1F42925600D8E690 /* PluseViewController.xib in Resources */,
 				48163CD31F428B2E00D8E690 /* Assets.xcassets in Resources */,
 			);

@@ -27,7 +27,9 @@ class MeTableViewController: BaseTableViewController {
     @objc private func settings() ->(){
         hidesBottomBarWhenPushed = true // push 过去时隐藏tabbar
         /// 设置返回按钮的样式
-        navigationController?.pushViewController(SettingsTableViewController(), animated: true)
+        let settingsVC = UIStoryboard(name: "SettingsTableViewController", bundle: nil).instantiateInitialViewController()
+        
+        navigationController?.pushViewController(settingsVC!, animated: true)
         hidesBottomBarWhenPushed = false // pop 回来时显示tabbar
     }
 
