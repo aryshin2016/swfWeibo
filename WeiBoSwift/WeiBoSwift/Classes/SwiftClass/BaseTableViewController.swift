@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
     
-    var isLogin = true
+    var isLogin = false
     
     override func loadView() {
         isLogin ? super.loadView() : setupVistorUI()
@@ -19,10 +19,8 @@ class BaseTableViewController: UITableViewController {
     func setupVistorUI() -> () {
         // 替换控制器默认view
         view = UIView()
-        // 添加导航栏按钮
+        
         UINavigationBar.appearance().tintColor = UIColor.orange
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
 
     override func viewDidLoad() {

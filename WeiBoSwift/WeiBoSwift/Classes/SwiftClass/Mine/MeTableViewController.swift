@@ -13,16 +13,22 @@ class MeTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func loadView() {
+        super.loadView()
+        // 添加导航栏按钮
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(settings))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
+    }
+    
+    @objc private func settings() ->(){
+        hidesBottomBarWhenPushed = true // push 过去时隐藏tabbar
+        /// 设置返回按钮的样式
+        navigationController?.pushViewController(SettingsTableViewController(), animated: true)
+        hidesBottomBarWhenPushed = false // pop 回来时显示tabbar
     }
 
     // MARK: - Table view data source

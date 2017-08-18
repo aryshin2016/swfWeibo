@@ -9,10 +9,25 @@
 import UIKit
 
 class WeiboTableViewController: BaseTableViewController {
+    
+    lazy var navCenterView :NavCenterView = {
+        
+        return NavCenterView(names : ["关注", "热门"])
+    }() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red
+    }
+    
+    override func loadView() {
+        super.loadView()
+        // 添加导航栏按钮
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        // 添加标题view
+        navigationItem.titleView = navCenterView
     }
 
     // MARK: - Table view data source
