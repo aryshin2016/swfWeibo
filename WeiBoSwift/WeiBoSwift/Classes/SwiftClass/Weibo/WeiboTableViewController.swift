@@ -10,14 +10,36 @@ import UIKit
 
 class WeiboTableViewController: BaseTableViewController {
     
-    lazy var navCenterView :NavCenterView = {
+    lazy var navCenterView : NavCenterView = {
         
         return NavCenterView(names : ["关注", "热门"])
-    }() 
+    }()
+    
+    lazy var menuViewController : MenuViewController = {
+        return MenuViewController()
+    }()
+    
+    lazy var coverWindow: UIWindow = {
+       let frameT = CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+       let coverWindow = UIWindow(frame: frameT)
+        coverWindow.backgroundColor = UIColor(white: 0.0, alpha: 0.05)
+       let tap = UITapGestureRecognizer(target: self, action: #selector(coverClose))
+        coverWindow.addGestureRecognizer(tap)
+        return coverWindow
+    }()
+    
+    var isPresent : Bool?
+    let duringP : Double = 0.2
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        
+        UIApplication.shared.keyWindow?.addSubview(coverWindow)
+        
+        addChildViewController(menuViewController)
+        view.addSubview(menuViewController.view)
+        
     }
     
     override func loadView() {
@@ -29,6 +51,23 @@ class WeiboTableViewController: BaseTableViewController {
         // 添加标题view 和设置代理
         navigationItem.titleView = navCenterView
         navCenterView.delegate = self
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        menuViewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
+        menuViewController.view.frame.origin.y = -(menuViewController.view.bounds.size.height)
+        
+    }
+    
+    @objc private func coverClose(tapG:UITapGestureRecognizer) -> (){
+        coverWindow.isHidden = true
+        UIView.animate(withDuration: duringP, animations: {
+            self.menuViewController.view.frame.origin.y = -(self.menuViewController.view.bounds.size.height)
+            self.navCenterView.arrowImage.layer.transform = CATransform3DIdentity
+        }, completion: { (finish) in
+            self.navCenterView.isShowMenu = false
+        })
     }
 
     // MARK: - Table view data source
@@ -44,9 +83,43 @@ class WeiboTableViewController: BaseTableViewController {
     }
 }
 
-// MARK: - NavCenterViewDelegate
+/// MARK: - NavCenterViewDelegate
 extension WeiboTableViewController : NavCenterViewDelegate {
-    func arrowRotation(navCenterView: NavCenterView) {
-        ASLog(t: "")
+    
+    func arrowRotation(navCenterView: NavCenterView, selectedBtn: UIButton, isShowMenu: Bool) {
+        self.isPresent = isShowMenu
+        ASLog(t: isShowMenu)
+        
+        if isShowMenu == false {
+            coverWindow.isHidden = true
+            let textS = selectedBtn.titleLabel?.text
+            if (textS?.isEqual("关注"))! {
+                UIView.animate(withDuration: 0.0, animations: {
+                    self.menuViewController.view.frame.origin.y = -(self.menuViewController.view.bounds.size.height)
+                }, completion: { (finish) in
+                    
+                    self.navCenterView.exchangeSelectedBtn(button :selectedBtn)
+                })
+               
+            }else {
+                UIView.animate(withDuration: duringP, animations: {
+                    self.menuViewController.view.frame.origin.y = -(self.menuViewController.view.bounds.size.height)
+                }, completion: { (finish) in
+                    
+                })
+            }
+            
+        }else {
+            UIView.animate(withDuration: duringP, animations: {
+                self.coverWindow.frame.origin.y = self.menuViewController.view.bounds.size.height + 64
+                self.menuViewController.view.frame.origin.y = 0
+            }, completion: { (finish) in
+                self.coverWindow.isHidden = false
+                
+            })
+        }
     }
+
 }
+
+

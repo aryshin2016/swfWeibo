@@ -15,6 +15,10 @@ class RootNavController: UINavigationController {
 
         // 设置导航栏默认橙色主题.
         UINavigationBar.appearance().tintColor = UIColor.orange
+        //navigationBar.setBackgroundImage(UIImage(named:"navigationbar_background"), for: UIBarPosition.topAttached, barMetrics: UIBarMetrics.default)
+       // navigationBar.barTintColor = UIColor.white
+        /// 这个属性强大，可以关闭默认的穿透效果，并且布局时忽略掉自身的64高度
+        navigationBar.isTranslucent = false
     }
 
     override func didReceiveMemoryWarning() {

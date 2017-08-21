@@ -9,15 +9,16 @@
 import UIKit
 
 protocol NavCenterViewDelegate: NSObjectProtocol {
-   func arrowRotation(navCenterView : NavCenterView) -> Void
+    func arrowRotation(navCenterView : NavCenterView, selectedBtn :UIButton, isShowMenu : Bool) -> Void
 }
 
 class NavCenterView: UIView {
     
-    let duringT :Double = 0.4
+    let duringT :Double = 0.2
     
-   weak var delegate : NavCenterViewDelegate?
+    weak var delegate : NavCenterViewDelegate?
     
+    var isShowMenu :Bool = false
     
     /// 选中按钮
     var selBtn : UIButton? = nil
@@ -58,47 +59,54 @@ class NavCenterView: UIView {
         }
         arrowImage.center = CGPoint(x: bounds.size.width + 5, y: bounds.size.height * 0.5)
     }
-    
+    /// 热门按钮的点击事件
     @objc private func btnClicked(button:UIButton) -> (){
         
         let btnTit = button.titleLabel?.text
         
         if (btnTit?.isEqual("热门"))! && button.isSelected == true {
+            self.isShowMenu = !isShowMenu
             // 响应箭头旋转
-            UIView.animate(withDuration: duringT, animations: { 
-                self.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+
+            UIView.animate(withDuration: duringT, animations: {
+                self.arrowImage.layer.transform = CATransform3DRotate(self.arrowImage.layer.transform, CGFloat(Double.pi), 0, 0, 1)
+            }, completion: { (finish) in
             })
-//            UIView.animate(withDuration: duringT, animations: {
-//                self.arrowImage.layer.transform = CATransform3DRotate(self.arrowImage.layer.transform, CGFloat(Double.pi), 0, 0, 1)
-//            }, completion: { (finish) in
-//            })
             // 响应下拉菜单
-            delegate?.arrowRotation(navCenterView: self)
+            delegate?.arrowRotation(navCenterView: self, selectedBtn: button, isShowMenu: isShowMenu)
             
         }else if (btnTit?.isEqual("热门"))! && button.isSelected == false {
-            arrowImage.layer.transform = CATransform3DIdentity
-            arrowImage.isHidden = false
-            
-            selBtn?.isSelected = false
-            selBtn = button
-            selBtn?.isSelected = !button.isSelected
+            UIView.animate(withDuration: 0.0, animations: { 
+                self.arrowImage.layer.transform = CATransform3DIdentity
+            }, completion: { (finish) in
+                self.isShowMenu = false
+                self.arrowImage.isHidden = false
+                self.exchangeSelectedBtn(button: button)
+            })
+            delegate?.arrowRotation(navCenterView: self, selectedBtn: button, isShowMenu: false)
         }else if (btnTit?.isEqual("关注"))! && button.isSelected == false {
-            arrowImage.layer.transform = CATransform3DIdentity
-            arrowImage.isHidden = true
-            
-            selBtn?.isSelected = false
-            selBtn = button
-            selBtn?.isSelected = !button.isSelected
+            UIView.animate(withDuration: 0.0, animations: { 
+                self.arrowImage.layer.transform = CATransform3DIdentity
+                
+            }, completion: { (finish) in
+                
+                self.arrowImage.isHidden = true
+                self.exchangeSelectedBtn(button: button)
+            })
+            delegate?.arrowRotation(navCenterView: self, selectedBtn: button, isShowMenu: false)
         }else if (btnTit?.isEqual("关注"))! && button.isSelected == true {
             arrowImage.layer.transform = CATransform3DIdentity
             arrowImage.isHidden = true
-            
-            selBtn?.isSelected = false
-            selBtn = button
-            selBtn?.isSelected = !button.isSelected
+            exchangeSelectedBtn(button: button)
+            delegate?.arrowRotation(navCenterView: self, selectedBtn: button, isShowMenu: false)
         }
         
-        
+    }
+    /// 切换选中按钮
+    public func exchangeSelectedBtn(button: UIButton) ->(){
+        selBtn?.isSelected = false
+        selBtn = button
+        selBtn?.isSelected = !button.isSelected
         
     }
 
