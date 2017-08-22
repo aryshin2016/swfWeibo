@@ -26,10 +26,14 @@ class CountryTableViewController: UIViewController {
         let textv = UILabel()
         textv.text = "不在以上区域，请尝试邮箱注册"
         textv.font = UIFont.systemFont(ofSize: 14)
-        textv.textColor = UIColor.red
+        textv.textColor = UIColor.gray
         textv.sizeToFit()
         emailView.addSubview(textv)
         textv.center = CGPoint(x: emailView.center.x, y: emailView.bounds.size.height * 0.5)
+        
+        let arrow = UIImageView(image: UIImage(named: "compose_weather_guide_anim_1"))
+        emailView.addSubview(arrow)
+        arrow.center = CGPoint(x: textv.frame.maxX + 10, y: emailView.bounds.size.height * 0.5)
         
         return emailView
     }()
@@ -44,16 +48,41 @@ class CountryTableViewController: UIViewController {
         setBottomEmail()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(
+            UIImage(named:"navigationbar_background"),
+            for: UIBarPosition.topAttached,
+            barMetrics: UIBarMetrics.default)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(
+            UIImage(),
+            for: UIBarPosition.topAttached,
+            barMetrics: UIBarMetrics.default)
+    }
+    
     private func setCountryTable() -> Void {
         view.addSubview(countryTable)
     }
     
     private func setBottomEmail() -> Void {
-       view.addSubview(bottomEmailView)
+        view.addSubview(bottomEmailView)
+        let emailTap = UITapGestureRecognizer(target: self, action: #selector(emailRegist))
+        bottomEmailView.addGestureRecognizer(emailTap)
+    }
+    
+    @objc private func emailRegist() ->() {
+        navigationController?.pushViewController(EmailRegistController(), animated: true)
     }
     
     private func setNavBackUI() -> Void {
         navigationItem.title = "选择国家/地区"
+        
         let backBtn = UIButton(text: "返回")
         backBtn?.setImage(UIImage(named: "navigationbar_back_withtext"), for: UIControlState.normal)
         backBtn?.addTarget(self, action: #selector(backNav), for: UIControlEvents.touchUpInside)

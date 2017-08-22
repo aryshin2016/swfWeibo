@@ -31,6 +31,7 @@
 		487230981F4A7AB3006F9518 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487230961F4A7AB3006F9518 /* MenuViewController.xib */; };
 		48A86C611F4574D100734EFC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */; };
 		48F94CBA1F453E7900F0E290 /* NavCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94CB91F453E7900F0E290 /* NavCenterView.swift */; };
+		C6858F531F4C8735001D6467 /* EmailRegistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6858F511F4C8735001D6467 /* EmailRegistController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		487230961F4A7AB3006F9518 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		48F94CB91F453E7900F0E290 /* NavCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCenterView.swift; sourceTree = "<group>"; };
+		C6858F511F4C8735001D6467 /* EmailRegistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				484421CE1F4C01890069E338 /* LoginViewController.xib */,
 				484421D11F4C19940069E338 /* RLButton.swift */,
 				484421D31F4C58560069E338 /* CountryTableViewController.swift */,
+				C6858F511F4C8735001D6467 /* EmailRegistController.swift */,
 			);
 			path = RegistLogin;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				48163CEC1F42925600D8E690 /* PluseViewController.swift in Sources */,
 				4818D7C11F441A9100D97007 /* UIButton+Image.swift in Sources */,
 				48163CCC1F428B2E00D8E690 /* AppDelegate.swift in Sources */,
+				C6858F531F4C8735001D6467 /* EmailRegistController.swift in Sources */,
 				48163CE41F428F7900D8E690 /* RootNavController.swift in Sources */,
 				484421CF1F4C01890069E338 /* LoginViewController.swift in Sources */,
 				48163CE21F428F3E00D8E690 /* RootTabBarController.swift in Sources */,

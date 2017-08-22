@@ -20,13 +20,16 @@ class RegistViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(cancelRegist))
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
         
-        /// 去掉默认导航栏底部黑线
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
         /// 点击选择对应国家区号
         let countryNumberTap = UITapGestureRecognizer(target: self, action: #selector(countryNumberClick))
         countryNumber.addGestureRecognizer(countryNumberTap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /// 去掉默认导航栏底部黑线
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()        
     }
 
     @objc private func cancelRegist() {

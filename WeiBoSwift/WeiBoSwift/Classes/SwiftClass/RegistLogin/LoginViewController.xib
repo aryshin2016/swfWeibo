@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +69,7 @@
                     <rect key="frame" x="0.0" y="603" width="375" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggA-4x-DEd" customClass="RLButton" customModule="WeiBoSwift" customModuleProvider="target">
-                            <rect key="frame" x="25.5" y="24" width="43" height="16"/>
+                            <rect key="frame" x="72.5" y="24" width="43" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="短信" image="login_wumi">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ash-pH-77P" customClass="RLButton" customModule="WeiBoSwift" customModuleProvider="target">
-                            <rect key="frame" x="284.5" y="24" width="36" height="16"/>
+                            <rect key="frame" x="263.5" y="24" width="36" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="QQ" image="login_qq">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,12 +92,12 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="d75-9P-bGX" firstAttribute="centerX" secondItem="i2a-C6-9vU" secondAttribute="centerX" id="0Hx-zP-Pt8"/>
-                        <constraint firstItem="ggA-4x-DEd" firstAttribute="centerX" secondItem="i2a-C6-9vU" secondAttribute="centerX" multiplier="0.25" id="22s-eR-T1d"/>
+                        <constraint firstItem="ggA-4x-DEd" firstAttribute="centerX" secondItem="i2a-C6-9vU" secondAttribute="centerX" multiplier="0.5" id="22s-eR-T1d"/>
                         <constraint firstAttribute="height" constant="64" id="3dQ-mE-MUo"/>
                         <constraint firstItem="Ash-pH-77P" firstAttribute="top" secondItem="d75-9P-bGX" secondAttribute="top" id="3vq-wG-bbi"/>
                         <constraint firstItem="d75-9P-bGX" firstAttribute="centerY" secondItem="ggA-4x-DEd" secondAttribute="centerY" id="7Wu-Af-md3"/>
                         <constraint firstItem="d75-9P-bGX" firstAttribute="centerY" secondItem="i2a-C6-9vU" secondAttribute="centerY" id="X1T-0j-roo"/>
-                        <constraint firstItem="Ash-pH-77P" firstAttribute="centerX" secondItem="i2a-C6-9vU" secondAttribute="centerX" multiplier="0.75" constant="161.875" id="ZJI-hO-k5H"/>
+                        <constraint firstItem="Ash-pH-77P" firstAttribute="centerX" secondItem="i2a-C6-9vU" secondAttribute="centerX" multiplier="1.5" id="ZJI-hO-k5H"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ij7-Mu-hEJ">

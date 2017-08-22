@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,7 +101,7 @@
                     <rect key="frame" x="0.0" y="603" width="375" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFl-uF-XRL" customClass="RLButton" customModule="WeiBoSwift" customModuleProvider="target">
-                            <rect key="frame" x="25.5" y="24" width="43" height="16"/>
+                            <rect key="frame" x="72.5" y="24" width="43" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="微信" image="login_weixin">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,7 +115,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-10-nIY" customClass="RLButton" customModule="WeiBoSwift" customModuleProvider="target">
-                            <rect key="frame" x="281" y="24" width="43" height="16"/>
+                            <rect key="frame" x="260" y="24" width="43" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="邮箱" image="vistor_discover_signup_mail">
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,10 +124,10 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="92t-wj-Q9l"/>
-                        <constraint firstItem="CNY-10-nIY" firstAttribute="centerX" secondItem="Zl5-et-NZW" secondAttribute="centerX" multiplier="0.75" constant="161.875" id="Her-Al-A8v"/>
+                        <constraint firstItem="CNY-10-nIY" firstAttribute="centerX" secondItem="Zl5-et-NZW" secondAttribute="centerX" multiplier="1.5" id="Her-Al-A8v"/>
                         <constraint firstItem="DJL-aI-Wdz" firstAttribute="centerX" secondItem="Zl5-et-NZW" secondAttribute="centerX" id="TnF-LP-xWE"/>
                         <constraint firstItem="DJL-aI-Wdz" firstAttribute="centerY" secondItem="Zl5-et-NZW" secondAttribute="centerY" id="UvQ-MT-XLy"/>
-                        <constraint firstItem="aFl-uF-XRL" firstAttribute="centerX" secondItem="Zl5-et-NZW" secondAttribute="centerX" multiplier="0.25" id="ZGZ-c3-PgZ"/>
+                        <constraint firstItem="aFl-uF-XRL" firstAttribute="centerX" secondItem="Zl5-et-NZW" secondAttribute="centerX" multiplier="0.5" id="ZGZ-c3-PgZ"/>
                         <constraint firstItem="CNY-10-nIY" firstAttribute="top" secondItem="DJL-aI-Wdz" secondAttribute="top" id="hNm-7i-fVU"/>
                         <constraint firstItem="DJL-aI-Wdz" firstAttribute="centerY" secondItem="aFl-uF-XRL" secondAttribute="centerY" id="m5Q-lF-uSR"/>
                     </constraints>
