@@ -1,40 +1,76 @@
 //
-//  MeTableViewController.swift
+//  CountryTableViewController.swift
 //  WeiBoSwift
 //
-//  Created by itogame on 2017/8/15.
+//  Created by itogame on 2017/8/22.
 //  Copyright © 2017年 itogame. All rights reserved.
 //
 
 import UIKit
 
-class MeTableViewController: BaseTableViewController {
+class CountryTableViewController: UIViewController {
+    
+    lazy var countryTable: UITableView = {
+        let tab = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.bounds.size.height), style: UITableViewStyle.plain)
+        return tab
+    }()
+    
+    lazy var bottomEmailView: UIView = {
+        let emailView :UIView = UIView(frame: CGRect(x: 0, y: self.view.bounds.size.height - 49 - 64, width: UIScreen.main.bounds.size.width, height: 49))
+        emailView.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
+        
+        let line = UIView(frame: CGRect(x: 0, y: 0, width: emailView.bounds.size.width, height: 0.5))
+        line.backgroundColor = UIColor.lightGray
+        emailView.addSubview(line)
+        
+        let textv = UILabel()
+        textv.text = "不在以上区域，请尝试邮箱注册"
+        textv.font = UIFont.systemFont(ofSize: 14)
+        textv.textColor = UIColor.red
+        textv.sizeToFit()
+        emailView.addSubview(textv)
+        textv.center = CGPoint(x: emailView.center.x, y: emailView.bounds.size.height * 0.5)
+        
+        return emailView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
-        
-    }
-
-    override func loadView() {
-        super.loadView()
-        // 添加导航栏按钮
-        
-        /// 设置返回按钮的样式
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(settings))
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
+        // 设置导航栏返回样式
+        setNavBackUI()
+        // 添加tableView
+        setCountryTable()
+        // 添加底部邮箱注册提示
+        setBottomEmail()
     }
     
-    @objc private func settings() ->(){
-        hidesBottomBarWhenPushed = true // push 过去时隐藏tabbar
-        let settingsVC = UIStoryboard(name: "SettingsTableViewController", bundle: nil).instantiateInitialViewController()
+    private func setCountryTable() -> Void {
+        view.addSubview(countryTable)
+    }
+    
+    private func setBottomEmail() -> Void {
+       view.addSubview(bottomEmailView)
+    }
+    
+    private func setNavBackUI() -> Void {
+        navigationItem.title = "选择国家/地区"
+        let backBtn = UIButton(text: "返回")
+        backBtn?.setImage(UIImage(named: "navigationbar_back_withtext"), for: UIControlState.normal)
+        backBtn?.addTarget(self, action: #selector(backNav), for: UIControlEvents.touchUpInside)
+        backBtn?.adjustsImageWhenHighlighted = false
+        backBtn?.setTitleColor(UIColor.black, for: UIControlState.normal)
+        backBtn?.sizeToFit()
+        backBtn?.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn!)
         
-        navigationController?.pushViewController(settingsVC!, animated: true)
-        hidesBottomBarWhenPushed = false // pop 回来时显示tabbar
+    }
+    
+    @objc private func backNav() -> (){
+        navigationController?.popViewController(animated: true)
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -44,7 +80,7 @@ class MeTableViewController: BaseTableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+*/
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

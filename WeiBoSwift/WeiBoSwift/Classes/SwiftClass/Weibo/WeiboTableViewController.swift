@@ -46,8 +46,9 @@ class WeiboTableViewController: BaseTableViewController {
         super.loadView()
         // 添加导航栏按钮
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action: #selector(regist))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(login))
+        
         // 添加标题view 和设置代理
         navigationItem.titleView = navCenterView
         navCenterView.delegate = self
@@ -67,6 +68,22 @@ class WeiboTableViewController: BaseTableViewController {
             self.navCenterView.arrowImage.layer.transform = CATransform3DIdentity
         }, completion: { (finish) in
             self.navCenterView.isShowMenu = false
+        })
+    }
+    
+    @objc private func regist(){
+        
+        let registVC = RootNavController(rootViewController: RegistViewController(nibName: "RegistViewController", bundle: nil))
+        present(registVC, animated: true, completion: {
+            
+        })
+        
+    }
+    
+    @objc private func login(){
+        let loginVC = RootNavController(rootViewController: LoginViewController(nibName: "LoginViewController", bundle: nil))
+        present(loginVC, animated: true, completion: {
+            
         })
     }
 
