@@ -66,6 +66,10 @@ class CountryTableViewController: UIViewController {
             barMetrics: UIBarMetrics.default)
     }
     
+    deinit {
+        
+    }
+    
     private func setCountryTable() -> Void {
         view.addSubview(countryTable)
     }

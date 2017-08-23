@@ -10,6 +10,18 @@ import UIKit
 
 class WeiboTableViewController: BaseTableViewController {
     
+    lazy var scrollV : UIScrollView = {
+        let scrollView : UIScrollView = UIScrollView(frame: self.view.bounds)
+        scrollView.backgroundColor = UIColor.red
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width * 2, height: self.view.frame.size.height)
+        scrollView.bounces = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.isPagingEnabled = true
+        
+        return scrollView
+    }()
+    
     lazy var navCenterView : NavCenterView = {
         
         return NavCenterView(names : ["关注", "热门"])
@@ -17,6 +29,11 @@ class WeiboTableViewController: BaseTableViewController {
     
     lazy var menuViewController : MenuViewController = {
         return MenuViewController()
+    }()
+    
+    lazy var menuTableController : MenuTableController = {
+        
+        return MenuTableController(style: UITableViewStyle.plain)
     }()
     
     lazy var coverWindow: UIWindow = {
@@ -28,22 +45,17 @@ class WeiboTableViewController: BaseTableViewController {
         return coverWindow
     }()
     
-    var isPresent : Bool?
+    var isLogined : Bool = false
     let duringP : Double = 0.2
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        automaticallyAdjustsScrollViewInsets = false
+        // 添加scrollView
+        view.addSubview(scrollV)
+        scrollV.delegate = self
         
-        UIApplication.shared.keyWindow?.addSubview(coverWindow)
-        
-        addChildViewController(menuViewController)
-        view.addSubview(menuViewController.view)
-        
-    }
-    
-    override func loadView() {
-        super.loadView()
         // 添加导航栏按钮
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action: #selector(regist))
@@ -52,10 +64,32 @@ class WeiboTableViewController: BaseTableViewController {
         // 添加标题view 和设置代理
         navigationItem.titleView = navCenterView
         navCenterView.delegate = self
+        
+        UIApplication.shared.keyWindow?.addSubview(coverWindow)
+        
+        addChildViewController(menuViewController)
+        view.addSubview(menuViewController.view)
+        
+        if isLogined {
+            
+        }else {
+            let visitorVC = VisitorController(nibName: "VisitorController", bundle: nil)
+            addChildViewController(visitorVC)
+            visitorVC.view.frame = scrollV.bounds
+            scrollV.addSubview(visitorVC.view)
+        }
+        
+        addChildViewController(menuTableController)
+        menuTableController.view.frame = CGRect(x: scrollV.bounds.size.width, y: 0, width: scrollV.bounds.size.width, height: scrollV.bounds.size.height)
+        scrollV.addSubview(menuTableController.view)
+        /// 设置默认滚动到最后一页，必须在内容添加完毕后设置（在初始化创建时设置不准确）
+        scrollV.setContentOffset(CGPoint(x: scrollV.bounds.size.width, y: 0), animated: false)
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         menuViewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         menuViewController.view.frame.origin.y = -(menuViewController.view.bounds.size.height)
         
@@ -86,26 +120,36 @@ class WeiboTableViewController: BaseTableViewController {
             
         })
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+    
 }
+
+/// MARK: - UIScrollViewDelegate
+extension WeiboTableViewController : UIScrollViewDelegate {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let offX = scrollView.contentOffset.x
+        if offX.isEqual(to: 0.0) {
+            navCenterView.exchangeSelectedBtn(button :navCenterView.subviews[1] as! UIButton)
+            navCenterView.arrowImage.isHidden = true
+        }else {
+            navCenterView.exchangeSelectedBtn(button :navCenterView.subviews.last as! UIButton)
+            navCenterView.arrowImage.isHidden = false
+        }
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //ASLog(t: scrollView.contentOffset.x)
+    }
+    
+}
+
 
 /// MARK: - NavCenterViewDelegate
 extension WeiboTableViewController : NavCenterViewDelegate {
     
     func arrowRotation(navCenterView: NavCenterView, selectedBtn: UIButton, isShowMenu: Bool) {
-        self.isPresent = isShowMenu
-        ASLog(t: isShowMenu)
         
         if isShowMenu == false {
             coverWindow.isHidden = true
@@ -114,6 +158,8 @@ extension WeiboTableViewController : NavCenterViewDelegate {
                 UIView.animate(withDuration: 0.0, animations: {
                     self.menuViewController.view.frame.origin.y = -(self.menuViewController.view.bounds.size.height)
                 }, completion: { (finish) in
+                    // 滚动到关注
+                    self.scrollV.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
                     
                     self.navCenterView.exchangeSelectedBtn(button :selectedBtn)
                 })
@@ -122,7 +168,8 @@ extension WeiboTableViewController : NavCenterViewDelegate {
                 UIView.animate(withDuration: duringP, animations: {
                     self.menuViewController.view.frame.origin.y = -(self.menuViewController.view.bounds.size.height)
                 }, completion: { (finish) in
-                    
+                    // 滚动到菜单
+                    self.scrollV.setContentOffset(CGPoint(x: self.scrollV.bounds.size.width, y: 0), animated: false)
                 })
             }
             

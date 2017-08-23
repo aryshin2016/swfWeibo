@@ -20,7 +20,6 @@
 		48163CF51F4292BF00D8E690 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48163CF41F4292BF00D8E690 /* MeTableViewController.swift */; };
 		4818D7BF1F441A3D00D97007 /* UIButton+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4818D7BE1F441A3D00D97007 /* UIButton+Image.m */; };
 		4818D7C11F441A9100D97007 /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818D7C01F441A9100D97007 /* UIButton+Image.swift */; };
-		4818D7C31F445E6D00D97007 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4818D7C21F445E6D00D97007 /* BaseTableViewController.swift */; };
 		484421CB1F4BD93A0069E338 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484421C91F4BD93A0069E338 /* RegistViewController.swift */; };
 		484421CC1F4BD93A0069E338 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484421CA1F4BD93A0069E338 /* RegistViewController.xib */; };
 		484421CF1F4C01890069E338 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484421CD1F4C01890069E338 /* LoginViewController.swift */; };
@@ -30,6 +29,10 @@
 		487230971F4A7AB3006F9518 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487230951F4A7AB2006F9518 /* MenuViewController.swift */; };
 		487230981F4A7AB3006F9518 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487230961F4A7AB3006F9518 /* MenuViewController.xib */; };
 		48A86C611F4574D100734EFC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */; };
+		48D06C0D1F4D6AAA00E82EB1 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D06C0C1F4D6AAA00E82EB1 /* BaseTableViewController.swift */; };
+		48D06C111F4D808D00E82EB1 /* VisitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */; };
+		48D06C121F4D808D00E82EB1 /* VisitorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D06C101F4D808D00E82EB1 /* VisitorController.xib */; };
+		48D06C141F4D983700E82EB1 /* MenuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D06C131F4D983700E82EB1 /* MenuTableController.swift */; };
 		48F94CBA1F453E7900F0E290 /* NavCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94CB91F453E7900F0E290 /* NavCenterView.swift */; };
 		C6858F531F4C8735001D6467 /* EmailRegistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6858F511F4C8735001D6467 /* EmailRegistController.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +55,6 @@
 		4818D7BD1F441A3D00D97007 /* UIButton+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Image.h"; sourceTree = "<group>"; };
 		4818D7BE1F441A3D00D97007 /* UIButton+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Image.m"; sourceTree = "<group>"; };
 		4818D7C01F441A9100D97007 /* UIButton+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
-		4818D7C21F445E6D00D97007 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		484421C91F4BD93A0069E338 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		484421CA1F4BD93A0069E338 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		484421CD1F4C01890069E338 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		487230951F4A7AB2006F9518 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		487230961F4A7AB3006F9518 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		48D06C0C1F4D6AAA00E82EB1 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorController.swift; sourceTree = "<group>"; };
+		48D06C101F4D808D00E82EB1 /* VisitorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorController.xib; sourceTree = "<group>"; };
+		48D06C131F4D983700E82EB1 /* MenuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableController.swift; sourceTree = "<group>"; };
 		48F94CB91F453E7900F0E290 /* NavCenterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavCenterView.swift; sourceTree = "<group>"; };
 		C6858F511F4C8735001D6467 /* EmailRegistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRegistController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,7 @@
 		48163CE01F428E6000D8E690 /* SwiftClass */ = {
 			isa = PBXGroup;
 			children = (
+				48D06C0E1F4D802A00E82EB1 /* Visitor */,
 				484421C81F4BD8A50069E338 /* RegistLogin */,
 				48163CE91F4291EC00D8E690 /* Mine */,
 				48163CE81F4291D100D8E690 /* Discover */,
@@ -140,7 +147,7 @@
 				48163CE51F42915200D8E690 /* Home */,
 				48163CE11F428F3E00D8E690 /* RootTabBarController.swift */,
 				48163CE31F428F7900D8E690 /* RootNavController.swift */,
-				4818D7C21F445E6D00D97007 /* BaseTableViewController.swift */,
+				48D06C0C1F4D6AAA00E82EB1 /* BaseTableViewController.swift */,
 			);
 			path = SwiftClass;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 				48F94CB91F453E7900F0E290 /* NavCenterView.swift */,
 				487230951F4A7AB2006F9518 /* MenuViewController.swift */,
 				487230961F4A7AB3006F9518 /* MenuViewController.xib */,
+				48D06C131F4D983700E82EB1 /* MenuTableController.swift */,
 			);
 			path = Weibo;
 			sourceTree = "<group>";
@@ -214,6 +222,15 @@
 				C6858F511F4C8735001D6467 /* EmailRegistController.swift */,
 			);
 			path = RegistLogin;
+			sourceTree = "<group>";
+		};
+		48D06C0E1F4D802A00E82EB1 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */,
+				48D06C101F4D808D00E82EB1 /* VisitorController.xib */,
+			);
+			path = Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D06C121F4D808D00E82EB1 /* VisitorController.xib in Resources */,
 				48159F3D1F467D27008393AF /* SettingsTableViewController.storyboard in Resources */,
 				48163CED1F42925600D8E690 /* PluseViewController.xib in Resources */,
 				484421D01F4C01890069E338 /* LoginViewController.xib in Resources */,
@@ -300,16 +318,18 @@
 				48163CF31F4292B100D8E690 /* DisTableViewController.swift in Sources */,
 				484421CB1F4BD93A0069E338 /* RegistViewController.swift in Sources */,
 				48F94CBA1F453E7900F0E290 /* NavCenterView.swift in Sources */,
+				48D06C141F4D983700E82EB1 /* MenuTableController.swift in Sources */,
 				48163CF11F42929E00D8E690 /* MsgTableViewController.swift in Sources */,
+				48D06C0D1F4D6AAA00E82EB1 /* BaseTableViewController.swift in Sources */,
 				484421D41F4C58560069E338 /* CountryTableViewController.swift in Sources */,
 				48163CEC1F42925600D8E690 /* PluseViewController.swift in Sources */,
 				4818D7C11F441A9100D97007 /* UIButton+Image.swift in Sources */,
 				48163CCC1F428B2E00D8E690 /* AppDelegate.swift in Sources */,
 				C6858F531F4C8735001D6467 /* EmailRegistController.swift in Sources */,
+				48D06C111F4D808D00E82EB1 /* VisitorController.swift in Sources */,
 				48163CE41F428F7900D8E690 /* RootNavController.swift in Sources */,
 				484421CF1F4C01890069E338 /* LoginViewController.swift in Sources */,
 				48163CE21F428F3E00D8E690 /* RootTabBarController.swift in Sources */,
-				4818D7C31F445E6D00D97007 /* BaseTableViewController.swift in Sources */,
 				484421D21F4C19940069E338 /* RLButton.swift in Sources */,
 				48163CF51F4292BF00D8E690 /* MeTableViewController.swift in Sources */,
 			);

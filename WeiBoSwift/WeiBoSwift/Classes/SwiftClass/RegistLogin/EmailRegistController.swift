@@ -11,6 +11,13 @@ import WebKit
 
 class EmailRegistController: UIViewController {
     
+    lazy var progressV: UIProgressView = {
+        let proView : UIProgressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 1))
+        proView.isHidden = true
+        proView.progressTintColor = UIColor.blue
+        return proView
+    }()
+    
     lazy var wkWebView: WKWebView = {
         let config = WKWebViewConfiguration()
         
@@ -25,6 +32,8 @@ class EmailRegistController: UIViewController {
         setNavBackUI()
         
         setWebViewUI()
+        
+        view.addSubview(progressV)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +46,11 @@ class EmailRegistController: UIViewController {
         wkWebView.load(request as URLRequest)
     }
     
+    deinit {
+        ASLog(t: "")
+        wkWebView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
+    }
+    
     private func setWebViewUI() -> Void {
         view.addSubview(wkWebView)
         
@@ -44,7 +58,18 @@ class EmailRegistController: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        ASLog(t: change)
+        
+        guard let progressT = change?[NSKeyValueChangeKey.newKey] else { return  }
+        
+        if progressT as! Float == 1 {
+            progressV.setProgress(0.0, animated: false)
+            progressV.isHidden = true
+        }else {
+            
+            progressV.isHidden = false
+            progressV.setProgress(progressT as! Float, animated: true)
+        }
+        
     }
 
     private func setNavBackUI() -> Void {

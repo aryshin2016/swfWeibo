@@ -12,8 +12,6 @@ class SettingsTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 禁止cell被选中
-        // tableView.allowsSelection = false
         // 设置导航栏返回样式
         setNavBackUI()
     }

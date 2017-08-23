@@ -13,16 +13,10 @@ class MeTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        
-    }
-
-    override func loadView() {
-        super.loadView()
-        // 添加导航栏按钮
-        
         /// 设置返回按钮的样式
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(settings))
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
+        
     }
     
     @objc private func settings() ->(){
@@ -32,19 +26,6 @@ class MeTableViewController: BaseTableViewController {
         navigationController?.pushViewController(settingsVC!, animated: true)
         hidesBottomBarWhenPushed = false // pop 回来时显示tabbar
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

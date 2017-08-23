@@ -8,28 +8,27 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
+class BaseTableViewController: UIViewController {
     
     var isLogin = false
     
-    override func loadView() {
-        isLogin ? super.loadView() : setupVistorUI()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        UINavigationBar.appearance().tintColor = UIColor.orange
+        if isLogin {
+            
+        }else {
+            setupVistorUI()
+        }
     }
     
     func setupVistorUI() -> () {
-        // 替换控制器默认view
-        view = UIView()
         
-        UINavigationBar.appearance().tintColor = UIColor.orange
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -39,7 +38,7 @@ class BaseTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+*/
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
