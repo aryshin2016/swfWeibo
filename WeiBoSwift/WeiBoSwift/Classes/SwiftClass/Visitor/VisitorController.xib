@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VisitorController" customModule="WeiBoSwift" customModuleProvider="target">
             <connections>
+                <outlet property="gradientView" destination="WD1-cW-eK1" id="J7B-nu-suQ"/>
+                <outlet property="rotaIcon" destination="NU4-8I-Vmn" id="OxI-E8-FPa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,14 +25,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="NU4-8I-Vmn">
                     <rect key="frame" x="179" y="243" width="16" height="16"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-eB-aE4">
-                    <rect key="frame" x="99.5" y="251" width="175" height="87.5"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="87.5" id="1SN-5W-BOw"/>
-                    </constraints>
-                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WD1-cW-eK1">
+                    <rect key="frame" x="179" y="243" width="16" height="16"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="K1A-fU-xtD">
-                    <rect key="frame" x="179" y="223" width="16" height="16"/>
+                    <rect key="frame" x="179" y="243" width="16" height="16"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你还没有关注的人。关注自己感兴趣的人，可在这里看到他们发布的内容" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-0B-FYR">
                     <rect key="frame" x="26" y="299" width="323" height="36"/>
@@ -52,11 +51,11 @@
                     <state key="highlighted" backgroundImage="common_button_white_highlighted"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="WD1-cW-eK1" firstAttribute="centerY" secondItem="NU4-8I-Vmn" secondAttribute="centerY" id="3FL-gh-KaT"/>
                 <constraint firstItem="sQo-pa-OIY" firstAttribute="width" secondItem="bPx-0B-FYR" secondAttribute="width" multiplier="0.9" id="Eky-BO-oRE"/>
-                <constraint firstItem="gvo-eB-aE4" firstAttribute="centerX" secondItem="NU4-8I-Vmn" secondAttribute="centerX" id="GGP-vU-04w"/>
-                <constraint firstItem="K1A-fU-xtD" firstAttribute="bottom" secondItem="NU4-8I-Vmn" secondAttribute="bottom" constant="-20" id="HVg-QD-N3r"/>
+                <constraint firstItem="K1A-fU-xtD" firstAttribute="centerY" secondItem="NU4-8I-Vmn" secondAttribute="centerY" id="HVg-QD-N3r"/>
                 <constraint firstItem="K1A-fU-xtD" firstAttribute="centerX" secondItem="NU4-8I-Vmn" secondAttribute="centerX" id="Ihm-yO-ho6"/>
                 <constraint firstItem="sQo-pa-OIY" firstAttribute="centerX" secondItem="bPx-0B-FYR" secondAttribute="centerX" id="Jgh-L6-wAx"/>
                 <constraint firstItem="NU4-8I-Vmn" firstAttribute="centerX" secondItem="bPx-0B-FYR" secondAttribute="centerX" id="LHY-YO-gAW"/>
@@ -64,9 +63,11 @@
                 <constraint firstItem="bPx-0B-FYR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.95" id="ZbX-Ah-sWb"/>
                 <constraint firstAttribute="trailing" secondItem="bPx-0B-FYR" secondAttribute="trailing" constant="26" id="fhO-mu-yL9"/>
                 <constraint firstItem="bPx-0B-FYR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gQF-uZ-YRG"/>
+                <constraint firstItem="WD1-cW-eK1" firstAttribute="width" secondItem="NU4-8I-Vmn" secondAttribute="width" id="ggT-2f-iKI"/>
+                <constraint firstItem="WD1-cW-eK1" firstAttribute="height" secondItem="NU4-8I-Vmn" secondAttribute="height" id="iOh-8r-p3t"/>
                 <constraint firstItem="bPx-0B-FYR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="26" id="ie3-OD-Mwa"/>
                 <constraint firstItem="sQo-pa-OIY" firstAttribute="top" secondItem="bPx-0B-FYR" secondAttribute="bottom" constant="20" id="j9y-zV-eon"/>
-                <constraint firstItem="gvo-eB-aE4" firstAttribute="top" secondItem="NU4-8I-Vmn" secondAttribute="centerY" id="qvR-ER-w6a"/>
+                <constraint firstItem="WD1-cW-eK1" firstAttribute="centerX" secondItem="NU4-8I-Vmn" secondAttribute="centerX" id="tXt-6h-9zM"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
@@ -76,6 +77,5 @@
         <image name="common_button_white_highlighted" width="11" height="9"/>
         <image name="visitordiscover_feed_image_house" width="16" height="16"/>
         <image name="visitordiscover_feed_image_smallicon" width="16" height="16"/>
-        <image name="visitordiscover_feed_mask_smallicon" width="175" height="175"/>
     </resources>
 </document>

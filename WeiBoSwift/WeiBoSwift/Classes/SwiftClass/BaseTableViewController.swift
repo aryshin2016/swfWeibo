@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UIViewController {
     
-    var isLogin = false
+   private var isLogin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
