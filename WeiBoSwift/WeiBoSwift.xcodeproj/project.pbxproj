@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480E58B21F4E63E60096F495 /* VisitorMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480E58B01F4E63E60096F495 /* VisitorMessageController.swift */; };
+		480E58B31F4E63E60096F495 /* VisitorMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480E58B11F4E63E60096F495 /* VisitorMessageController.xib */; };
 		48159F3D1F467D27008393AF /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48159F3C1F467D27008393AF /* SettingsTableViewController.storyboard */; };
 		48163CCC1F428B2E00D8E690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48163CCB1F428B2E00D8E690 /* AppDelegate.swift */; };
 		48163CD31F428B2E00D8E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48163CD21F428B2E00D8E690 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		484421D41F4C58560069E338 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484421D31F4C58560069E338 /* CountryTableViewController.swift */; };
 		487230971F4A7AB3006F9518 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487230951F4A7AB2006F9518 /* MenuViewController.swift */; };
 		487230981F4A7AB3006F9518 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 487230961F4A7AB3006F9518 /* MenuViewController.xib */; };
+		48862EB81F4EFE000085CFAB /* VisitorMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48862EB61F4EFE000085CFAB /* VisitorMeController.swift */; };
+		48862EB91F4EFE000085CFAB /* VisitorMeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48862EB71F4EFE000085CFAB /* VisitorMeController.xib */; };
 		48A86C611F4574D100734EFC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */; };
 		48D06C0D1F4D6AAA00E82EB1 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D06C0C1F4D6AAA00E82EB1 /* BaseTableViewController.swift */; };
 		48D06C111F4D808D00E82EB1 /* VisitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */; };
@@ -38,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		480E58B01F4E63E60096F495 /* VisitorMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorMessageController.swift; sourceTree = "<group>"; };
+		480E58B11F4E63E60096F495 /* VisitorMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorMessageController.xib; sourceTree = "<group>"; };
 		48159F3C1F467D27008393AF /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
 		48163CC81F428B2E00D8E690 /* WeiBoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48163CCB1F428B2E00D8E690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 		484421D31F4C58560069E338 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		487230951F4A7AB2006F9518 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		487230961F4A7AB3006F9518 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		48862EB61F4EFE000085CFAB /* VisitorMeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorMeController.swift; sourceTree = "<group>"; };
+		48862EB71F4EFE000085CFAB /* VisitorMeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VisitorMeController.xib; sourceTree = "<group>"; };
 		48A86C5F1F4574D100734EFC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		48D06C0C1F4D6AAA00E82EB1 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorController.swift; sourceTree = "<group>"; };
@@ -229,6 +237,10 @@
 			children = (
 				48D06C0F1F4D808D00E82EB1 /* VisitorController.swift */,
 				48D06C101F4D808D00E82EB1 /* VisitorController.xib */,
+				480E58B01F4E63E60096F495 /* VisitorMessageController.swift */,
+				480E58B11F4E63E60096F495 /* VisitorMessageController.xib */,
+				48862EB61F4EFE000085CFAB /* VisitorMeController.swift */,
+				48862EB71F4EFE000085CFAB /* VisitorMeController.xib */,
 			);
 			path = Visitor;
 			sourceTree = "<group>";
@@ -300,6 +312,8 @@
 				484421D01F4C01890069E338 /* LoginViewController.xib in Resources */,
 				484421CC1F4BD93A0069E338 /* RegistViewController.xib in Resources */,
 				48163CD31F428B2E00D8E690 /* Assets.xcassets in Resources */,
+				48862EB91F4EFE000085CFAB /* VisitorMeController.xib in Resources */,
+				480E58B31F4E63E60096F495 /* VisitorMessageController.xib in Resources */,
 				487230981F4A7AB3006F9518 /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +331,7 @@
 				487230971F4A7AB3006F9518 /* MenuViewController.swift in Sources */,
 				48163CF31F4292B100D8E690 /* DisTableViewController.swift in Sources */,
 				484421CB1F4BD93A0069E338 /* RegistViewController.swift in Sources */,
+				480E58B21F4E63E60096F495 /* VisitorMessageController.swift in Sources */,
 				48F94CBA1F453E7900F0E290 /* NavCenterView.swift in Sources */,
 				48D06C141F4D983700E82EB1 /* MenuTableController.swift in Sources */,
 				48163CF11F42929E00D8E690 /* MsgTableViewController.swift in Sources */,
@@ -326,6 +341,7 @@
 				4818D7C11F441A9100D97007 /* UIButton+Image.swift in Sources */,
 				48163CCC1F428B2E00D8E690 /* AppDelegate.swift in Sources */,
 				C6858F531F4C8735001D6467 /* EmailRegistController.swift in Sources */,
+				48862EB81F4EFE000085CFAB /* VisitorMeController.swift in Sources */,
 				48D06C111F4D808D00E82EB1 /* VisitorController.swift in Sources */,
 				48163CE41F428F7900D8E690 /* RootNavController.swift in Sources */,
 				484421CF1F4C01890069E338 /* LoginViewController.swift in Sources */,

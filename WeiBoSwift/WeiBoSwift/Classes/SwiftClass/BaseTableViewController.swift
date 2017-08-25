@@ -9,8 +9,8 @@
 import UIKit
 
 class BaseTableViewController: UIViewController {
-    
-   private var isLogin = false
+    /// 是否登录
+    var isLogin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

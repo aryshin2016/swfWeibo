@@ -46,7 +46,7 @@ gradientView.backgroundColor = UIColor.clear
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        ASLog(t: gradientView.frame)
+        // ASLog(t: gradientView.frame)
         gradientView.layer.addSublayer(gradientLayer)
         //gradientView.layer.mask = gradientLayer
     }
@@ -56,6 +56,10 @@ gradientView.backgroundColor = UIColor.clear
         rotaIcon.layer.removeAllAnimations()
     }
 
+    // 找感兴趣的人
+    @IBAction func findInterests(_ sender: UIButton) {
+        ASLog(t: "")
+    }
     /*
     // MARK: - Navigation
 

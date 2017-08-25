@@ -9,6 +9,12 @@
 import UIKit
 
 class MsgTableViewController: BaseTableViewController {
+    
+    lazy var visitorMessageVC: VisitorMessageController = {
+        let visitorM :VisitorMessageController = VisitorMessageController(nibName: "VisitorMessageController", bundle: nil)
+        
+        return visitorM
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +22,18 @@ class MsgTableViewController: BaseTableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if isLogin {
+            
+        }else {
+            addChildViewController(visitorMessageVC)
+            view.addSubview(visitorMessageVC.view)
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        visitorMessageVC.view.frame = view.bounds
+        
     }
 
     /*

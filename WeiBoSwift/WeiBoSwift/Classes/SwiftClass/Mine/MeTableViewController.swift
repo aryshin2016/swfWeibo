@@ -9,14 +9,31 @@
 import UIKit
 
 class MeTableViewController: BaseTableViewController {
+    
+    
+    lazy var visitorMeController : VisitorMeController = {
+        let visitorMeVC :VisitorMeController = VisitorMeController(nibName: "VisitorMeController", bundle: nil)
+        return visitorMeVC
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black
+        ///
+      navigationController?.automaticallyAdjustsScrollViewInsets = false
+        
         /// 设置返回按钮的样式
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(settings))
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
         
+        ///
+        addChildViewController(visitorMeController)
+        view.addSubview(visitorMeController.view)
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        visitorMeController.view.frame = CGRect(x: 0, y: -64, width: view.frame.size.width, height: UIScreen.main.bounds.size.height)
     }
     
     @objc private func settings() ->(){
