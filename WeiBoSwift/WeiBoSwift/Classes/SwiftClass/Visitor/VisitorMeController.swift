@@ -25,7 +25,7 @@ class VisitorMeController: UIViewController {
 
     @objc private func panning(pan : UIPanGestureRecognizer) {
         // Dispose of any resources that can be recreated.
-        ASLog(t: pan.translation(in: view))
+        ASLog(t: pan.translation(in: view).y)
     }
     
 
