@@ -11,14 +11,14 @@ import WebKit
 
 class EmailRegistController: UIViewController {
     
-    lazy var progressV: UIProgressView = {
+    @objc lazy var progressV: UIProgressView = {
         let proView : UIProgressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: 1))
         proView.isHidden = true
         proView.progressTintColor = UIColor.blue
         return proView
     }()
     
-    lazy var wkWebView: WKWebView = {
+    @objc lazy var wkWebView: WKWebView = {
         let config = WKWebViewConfiguration()
         
         let web : WKWebView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), configuration: config)
@@ -39,7 +39,7 @@ class EmailRegistController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard  let url = URL(string: "https://www.baidu.com/") else {
-            ASLog(t: "url地址错误！！！")
+            ASLog("url地址错误！！！")
             return
         }
         let request = NSMutableURLRequest(url: url, cachePolicy: NSURLRequest.CachePolicy.reloadRevalidatingCacheData, timeoutInterval: 30)
@@ -47,7 +47,7 @@ class EmailRegistController: UIViewController {
     }
     
     deinit {
-        ASLog(t: "")
+        ASLog("")
         wkWebView.removeObserver(self, forKeyPath: "estimatedProgress", context: nil)
     }
     

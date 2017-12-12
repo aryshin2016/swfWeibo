@@ -10,7 +10,7 @@ import UIKit
 
 class MsgTableViewController: BaseTableViewController {
     
-    lazy var visitorMessageVC: VisitorMessageController = {
+    @objc lazy var visitorMessageVC: VisitorMessageController = {
         let visitorM :VisitorMessageController = VisitorMessageController(nibName: "VisitorMessageController", bundle: nil)
         
         return visitorM

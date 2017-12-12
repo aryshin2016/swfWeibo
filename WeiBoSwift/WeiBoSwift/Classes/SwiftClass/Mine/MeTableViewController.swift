@@ -11,7 +11,7 @@ import UIKit
 class MeTableViewController: BaseTableViewController {
     
     
-    lazy var visitorMeController : VisitorMeController = {
+    @objc lazy var visitorMeController : VisitorMeController = {
         let visitorMeVC :VisitorMeController = VisitorMeController(nibName: "VisitorMeController", bundle: nil)
         return visitorMeVC
     }()
@@ -23,7 +23,7 @@ class MeTableViewController: BaseTableViewController {
         
         /// 设置返回按钮的样式
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.plain, target: self, action: #selector(settings))
-        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black], for: UIControlState.normal)
         
         ///
         addChildViewController(visitorMeController)

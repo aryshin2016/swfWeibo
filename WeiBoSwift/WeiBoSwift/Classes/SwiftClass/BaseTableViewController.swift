@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UIViewController {
     /// 是否登录
-    var isLogin = false
+    @objc var isLogin = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class BaseTableViewController: UIViewController {
         }
     }
     
-    func setupVistorUI() -> () {
+    @objc func setupVistorUI() -> () {
         
     }
 

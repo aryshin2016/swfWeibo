@@ -10,7 +10,7 @@ import UIKit
 
 class PluseViewController: UIViewController {
     
-    var scrollView : UIScrollView?
+    @objc var scrollView : UIScrollView?
     
     @IBOutlet weak var adView: UIView!
     
@@ -21,19 +21,19 @@ class PluseViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        ASLog(t: "")
+        ASLog("")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        ASLog(t: "")
+        ASLog("")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(#function)
+        ASLog(#function)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(#function)
+        ASLog(#function)
     }
     
     @IBAction func closePlus(_ sender: UIButton) {

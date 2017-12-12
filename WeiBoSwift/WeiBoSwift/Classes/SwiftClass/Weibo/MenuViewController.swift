@@ -15,7 +15,7 @@ let magin :CGFloat = 15.0
 class MenuViewController: UIViewController {
     
     
-    lazy var collectionContent :UICollectionView = {
+    @objc lazy var collectionContent :UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         flow.minimumLineSpacing = 10
         flow.minimumInteritemSpacing = magin
@@ -66,7 +66,7 @@ extension MenuViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        ASLog(t: indexPath.row)
+        ASLog(indexPath.row)
         if indexPath.row == 11 {
             collectionView.isScrollEnabled = true
             collectionView.reloadData()

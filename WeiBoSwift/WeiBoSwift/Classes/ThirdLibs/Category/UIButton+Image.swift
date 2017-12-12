@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-   convenience  init(imageName : String, backgroundImageName : String, titleText : String?){
+   @objc convenience  init(imageName : String, backgroundImageName : String, titleText : String?){
         self.init()
     
     setImage(UIImage(named: imageName), for: UIControlState.normal)

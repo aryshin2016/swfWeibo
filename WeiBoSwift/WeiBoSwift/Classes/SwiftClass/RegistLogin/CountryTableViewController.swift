@@ -10,12 +10,12 @@ import UIKit
 
 class CountryTableViewController: UIViewController {
     
-    lazy var countryTable: UITableView = {
+    @objc lazy var countryTable: UITableView = {
         let tab = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: self.view.bounds.size.height), style: UITableViewStyle.plain)
         return tab
     }()
     
-    lazy var bottomEmailView: UIView = {
+    @objc lazy var bottomEmailView: UIView = {
         let emailView :UIView = UIView(frame: CGRect(x: 0, y: self.view.bounds.size.height - 49 - 64, width: UIScreen.main.bounds.size.width, height: 49))
         emailView.backgroundColor = UIColor(white: 1.0, alpha: 0.98)
         

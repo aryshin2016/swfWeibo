@@ -10,7 +10,7 @@ import UIKit
 
 class VisitorMeController: UIViewController {
     
-    lazy var panGesture: UIPanGestureRecognizer = {
+    @objc lazy var panGesture: UIPanGestureRecognizer = {
         let panG :UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panning(pan:)))
         
         return panG
@@ -25,7 +25,7 @@ class VisitorMeController: UIViewController {
 
     @objc private func panning(pan : UIPanGestureRecognizer) {
         // Dispose of any resources that can be recreated.
-        ASLog(t: pan.translation(in: view).y)
+        ASLog(pan.translation(in: view).y)
     }
     
 

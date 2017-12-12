@@ -14,20 +14,20 @@ protocol NavCenterViewDelegate: NSObjectProtocol {
 
 class NavCenterView: UIView {
     
-    let duringT :Double = 0.2
+    @objc let duringT :Double = 0.2
     
     weak var delegate : NavCenterViewDelegate?
     
-    var isShowMenu :Bool = false
+    @objc var isShowMenu :Bool = false
     
     /// 选中按钮
-    var selBtn : UIButton? = nil
+    @objc var selBtn : UIButton? = nil
     /// 箭头
-    lazy var arrowImage :UIImageView = {
+    @objc lazy var arrowImage :UIImageView = {
         return UIImageView(image: UIImage(named: "navigationbar_arrow_down_new"))
     }()
 
-    convenience init(names: [String]) {
+    @objc convenience init(names: [String]) {
         self.init()
         addSubview(arrowImage)
         backgroundColor = UIColor.clear
@@ -103,7 +103,7 @@ class NavCenterView: UIView {
         
     }
     /// 切换选中按钮
-    public func exchangeSelectedBtn(button: UIButton) ->(){
+    @objc public func exchangeSelectedBtn(button: UIButton) ->(){
         selBtn?.isSelected = false
         selBtn = button
         selBtn?.isSelected = !button.isSelected

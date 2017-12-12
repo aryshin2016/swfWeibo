@@ -10,7 +10,7 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
     
-    lazy var plusBtn:UIButton = {
+    @objc lazy var plusBtn:UIButton = {
         
         let plusBtn = UIButton(imageName: "tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button", titleText: nil)
         plusBtn.addTarget(self, action: #selector(plusClicked(btn:)), for: UIControlEvents.touchUpInside)
@@ -23,7 +23,7 @@ class RootTabBarController: UITabBarController {
         tabBar.backgroundImage = UIImage(named: "tabbar_background")
         tabBar.backgroundColor = UIColor(white: 1.0, alpha: 0.95)
         // 设置默认的黑色（不变灰）
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black], for: UIControlState.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black], for: UIControlState.normal)
         // 初始化UI.
         setupUI()
         // 设置代理，监听tabbarItem的点击跳转
@@ -95,7 +95,7 @@ class RootTabBarController: UITabBarController {
         // MARK: 这样设置-主动present控制器的view不消失，有利于实现背景穿透效果
         plusVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         present(plusVC, animated: false, completion: {() ->() in
-            ASLog(t: "")
+            ASLog("")
         })
 
     }
@@ -107,7 +107,7 @@ extension RootTabBarController : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         // 禁止中间item的点击切换
         if viewController.isEqual(tabBarController.childViewControllers[2]) {
-            ASLog(t: viewController)
+            ASLog(viewController)
             return false
         }else {
             return true

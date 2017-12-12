@@ -10,7 +10,7 @@ import UIKit
 
 class VisitorController: UIViewController {
     
-    lazy var gradientLayer: CAGradientLayer = {
+    @objc lazy var gradientLayer: CAGradientLayer = {
         let layT : CAGradientLayer = CAGradientLayer()
         layT.frame = self.gradientView.bounds
         layT.colors = [UIColor(white: 1, alpha: 1).cgColor, UIColor(white: 1, alpha: 0).cgColor]
@@ -58,7 +58,7 @@ gradientView.backgroundColor = UIColor.clear
 
     // 找感兴趣的人
     @IBAction func findInterests(_ sender: UIButton) {
-        ASLog(t: "")
+        ASLog("")
     }
     /*
     // MARK: - Navigation

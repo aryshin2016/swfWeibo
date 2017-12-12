@@ -10,7 +10,7 @@ import UIKit
 
 class WeiboTableViewController: BaseTableViewController {
     
-    lazy var scrollV : UIScrollView = {
+    @objc lazy var scrollV : UIScrollView = {
         let scrollView : UIScrollView = UIScrollView(frame: self.view.bounds)
         scrollView.backgroundColor = UIColor.red
         scrollView.contentSize = CGSize(width: self.view.frame.size.width * 2, height: self.view.frame.size.height)
@@ -22,21 +22,21 @@ class WeiboTableViewController: BaseTableViewController {
         return scrollView
     }()
     
-    lazy var navCenterView : NavCenterView = {
+    @objc lazy var navCenterView : NavCenterView = {
         
         return NavCenterView(names : ["关注", "热门"])
     }()
     
-    lazy var menuViewController : MenuViewController = {
+    @objc lazy var menuViewController : MenuViewController = {
         return MenuViewController()
     }()
     
-    lazy var menuTableController : MenuTableController = {
+    @objc lazy var menuTableController : MenuTableController = {
         
         return MenuTableController(style: UITableViewStyle.plain)
     }()
     
-    lazy var coverWindow: UIWindow = {
+    @objc lazy var coverWindow: UIWindow = {
        let frameT = CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
        let coverWindow = UIWindow(frame: frameT)
         coverWindow.backgroundColor = UIColor(white: 0.0, alpha: 0.05)
@@ -45,8 +45,8 @@ class WeiboTableViewController: BaseTableViewController {
         return coverWindow
     }()
     
-    var isLogined : Bool = false
-    let duringP : Double = 0.2
+    @objc var isLogined : Bool = false
+    @objc let duringP : Double = 0.2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,8 +89,11 @@ class WeiboTableViewController: BaseTableViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        menuViewController.view.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
+        //TODO: - 这里若是不加延迟在Xcode9.2会导致Thread 1: signal SIGKILL
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(0.000001))) {
+            
+            self.menuViewController.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+        }
         menuViewController.view.frame.origin.y = -(menuViewController.view.bounds.size.height)
         
     }
@@ -123,7 +126,7 @@ class WeiboTableViewController: BaseTableViewController {
     
 }
 
-/// MARK: - UIScrollViewDelegate
+// MARK: - UIScrollViewDelegate
 extension WeiboTableViewController : UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -149,7 +152,7 @@ extension WeiboTableViewController : UIScrollViewDelegate {
 /// MARK: - NavCenterViewDelegate
 extension WeiboTableViewController : NavCenterViewDelegate {
     
-    func arrowRotation(navCenterView: NavCenterView, selectedBtn: UIButton, isShowMenu: Bool) {
+    @objc func arrowRotation(navCenterView: NavCenterView, selectedBtn: UIButton, isShowMenu: Bool) {
         
         if isShowMenu == false {
             coverWindow.isHidden = true

@@ -13,9 +13,9 @@
 ///   - t: 需要打印的对象
 ///   - line: 当前打印行数,采用swift参数设置默认值方式
 ///   - methodName: 当前执行打印对象的函数名,采用swift参数设置默认值方式
-func ASLog<T>(t:T, line: Int = #line, methodName : String = #function) -> () {
+func ASLog<T>(_ t:T, line: Int = #line, methodName : String = #function, fileName:String = #file) -> () {
     #if DEBUG
-        print("\(methodName)\(line)\(":")\(t)")
+        print("\(fileName.split(separator: "/").last!)\("-")\(methodName)\(line)\(":")\(t)")
     #endif
 }
 
@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        ASLog("")
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = RootTabBarController()
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        ASLog("即将进入前台！！！")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
